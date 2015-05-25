@@ -1,0 +1,37 @@
+{
+  "name": "grunt-svgpackager",
+  "description": "Grunt plugin for SVG Packager",
+  "version": "0.1.0",
+  "homepage": "https://github.com/TheMouseHouse/grunt-svgpackager",
+  "author": "Piotr Skonieczny <piosko@themousehouse.pl> (http://themousehouse.pl/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheMouseHouse/grunt-svgpackager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheMouseHouse/grunt-svgpackager/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
