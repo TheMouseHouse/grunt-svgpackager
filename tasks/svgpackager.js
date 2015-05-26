@@ -1,8 +1,8 @@
 /*
  * grunt-svgpackager
- * https://github.com/pioSko/grunt-svgpackager
+ * https://github.com/TheMouseHouse/grunt-svgpackager
  *
- * Copyright (c) 2015 Piotr Skonieczny
+ * Copyright © The Mouse House - 2015
  * Licensed under the MIT license.
  */
 
@@ -15,36 +15,27 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('svgpackager', 'Grunt plugin for SVG Packager', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
-
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
+    var options = this.options(
+        {
+            source:    '',
+            dest:      '',
+            package:   'svgpackager',
+            prefixsvg: true,
+            prefix:    '',
+            output:    'all',
+            base64:    false,
+            debug:     false,
+            silent:    false
         }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+    );
 
-      // Handle options.
-      src += options.punctuation;
-
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
-
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
+    if(options.source.length){
+        var done = this.async();
+        require('svgpackager').pack(options, done);
+    } else {
+        grunt.log.warn('Source folder not defined!');
+        return false;
+    }
   });
 
 };
