@@ -8,6 +8,8 @@
 
 'use strict';
 
+var Fs = require('fs');
+
 module.exports = function(grunt) {
 
   // Please see the Grunt documentation for more information regarding task
@@ -29,7 +31,16 @@ module.exports = function(grunt) {
         }
     );
 
-    if(options.source.length){
+    if(options.source.length && options.dest.length && options.package.length){
+        if(!Fs.existsSync(options.source)) {
+            grunt.log.warn('Source not found!');
+            return false;
+		}
+
+        if(!Fs.existsSync(options.dest)) {
+			Fs.mkdirSync(options.dest);
+		}
+
         var done = this.async();
         require('svgpackager').pack(options, done);
     } else {

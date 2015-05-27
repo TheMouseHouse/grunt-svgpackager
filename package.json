@@ -1,7 +1,7 @@
 {
   "name": "grunt-svgpackager",
   "description": "Grunt plugin for SVG Packager",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "homepage": "https://github.com/TheMouseHouse/grunt-svgpackager",
   "author": "Piotr Skonieczny <piosko@themousehouse.pl> (http://themousehouse.pl/)",
   "repository": {
@@ -34,6 +34,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "svgpackager": "^1.0.1"
+    "svgpackager": "^1.0.3"
   }
 }

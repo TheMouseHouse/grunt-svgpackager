@@ -25,16 +25,21 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     svgpackager: {
-        all: {
+        sample1: {
             options: {
-                source:    '',
-                dest:      '',
-                prefixsvg: true,
-                prefix:    '',
-                output:    'all',
-                base64:    false,
-                debug:     false,
-                silent:    false
+                source:    'samples/sample1',
+                dest:      'tmp',
+                package:   'sample1',
+                prefix:    'my-svg-'
+            }
+        },
+        sample2: {
+            options: {
+                source:    'samples/sample2',
+                dest:      'tmp',
+                package:   'sample2',
+                output:    'css',
+                base64:    true
             }
         }
     },

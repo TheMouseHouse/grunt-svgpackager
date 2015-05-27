@@ -1,6 +1,8 @@
-# grunt-svgpackager
+# grunt-svgpackager v.0.3.0
 
 Grunt plugin for SVG Packager.  
+
+#### Recent bugs Fixed
 
 This tool gathers all your SVG from a source folder and packages them all into a JSON file and/or a CSS file.
 
@@ -54,13 +56,13 @@ Default value: `''`
 
 A uri string to the target folder containing your SVG files.
 
-#### options.dest
+#### options.dest - (required)
 Type: `String`
 Default value: `''`
 
 A uri string to the destination folder where your CSS and/or JSON files should be saved.
 
-#### options.package
+#### options.package - (required)
 Type: `String`
 Default value: `'svgpackager'`
 
@@ -68,7 +70,7 @@ A string representing the name of the package. This value will also be used as t
 
 #### options.prefixsvg
 Type: `Boolean`
-Default value: `'true'`
+Default value: `true`
 
 Will prefix the SVG or Base64 data with `data:image/svg+xml;utf8,` or `data:image/svg+xml;base64,` respectively.  
 NOTE: Default set to `true`.
@@ -135,20 +137,20 @@ Of course, `'all'` will generate both JSON and CSS.
 
 #### options.base64
 Type: `Boolean`
-Default value: `'false'`
+Default value: `false`
 
 Can be set to `true` if you want the SVG data to be encoded to Base64.  
 Default is `false` only due to the fact that Base64 usually creates larger files.
 
 #### options.debug
 Type: `Boolean`
-Default value: `'false'`
+Default value: `false`
 
 Setting this option to `true` will execute a 'dry run'. Data will be output to console and no files will be generated.
 
 #### options.silent
 Type: `Boolean`
-Default value: `'false'`
+Default value: `false`
 
 Can be set to `true` if you do not wish to see any console output from svgpackager.
 
@@ -178,8 +180,12 @@ grunt.initConfig({
 ```
 
 ## Release History
+*v0.3.0*  
+Fixed failure when desitantion not found.  
+Options `dest` and `package` now required.  
+
 *v0.2.1*  
-Updated documentation.
+Updated documentation.  
 
 *v0.2.0*  
 Added all [svgpackager](https://www.npmjs.com/package/svgpackager) functionality.  
