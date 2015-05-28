@@ -8,7 +8,7 @@
 
 'use strict';
 
-var Fs = require('fs');
+var Fs     = require('fs');
 
 module.exports = function(grunt) {
 
@@ -32,16 +32,13 @@ module.exports = function(grunt) {
     );
 
     if(options.source.length && options.dest.length && options.package.length){
+        var done = this.async();
+
         if(!Fs.existsSync(options.source)) {
             grunt.log.warn('Source not found!');
             return false;
 		}
 
-        if(!Fs.existsSync(options.dest)) {
-			Fs.mkdirSync(options.dest);
-		}
-
-        var done = this.async();
         require('svgpackager').pack(options, done);
     } else {
         grunt.log.warn('Source folder not defined!');

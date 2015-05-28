@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         sample1: {
             options: {
                 source:    'samples/sample1',
-                dest:      'tmp',
+                dest:      'tmp/sample1/assets',
                 package:   'sample1',
                 prefix:    'my-svg-'
             }
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         sample2: {
             options: {
                 source:    'samples/sample2',
-                dest:      'tmp',
+                dest:      'tmp/sample2/assets',
                 package:   'sample2',
                 output:    'css',
                 base64:    true

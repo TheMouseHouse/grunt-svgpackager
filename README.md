@@ -1,4 +1,4 @@
-# grunt-svgpackager v.0.3.0
+# grunt-svgpackager - v0.4.0
 
 Grunt plugin for SVG Packager.  
 
@@ -180,6 +180,9 @@ grunt.initConfig({
 ```
 
 ## Release History
+*v0.4.0*  
+Fixed failure when desitantion not found. For real this time! Creates destination using [mkdirp](https://www.npmjs.com/package/mkdirp).  
+
 *v0.3.0*  
 Fixed failure when desitantion not found.  
 Options `dest` and `package` now required.  
