@@ -180,6 +180,12 @@ grunt.initConfig({
 ```
 
 ## Release History
+*v0.4.2*  
+Improved error logging.  
+
+*v0.4.1*  
+Updated dependency to [svgpackager](https://www.npmjs.com/package/svgpackager).  
+
 *v0.4.0*  
 Fixed failure when desitantion not found. For real this time! Creates destination using [mkdirp](https://www.npmjs.com/package/mkdirp).  
 

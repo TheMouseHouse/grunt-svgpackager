@@ -11,12 +11,7 @@
 var Fs     = require('fs');
 
 module.exports = function(grunt) {
-
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
   grunt.registerMultiTask('svgpackager', 'Grunt plugin for SVG Packager', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options(
         {
             source:    '',
@@ -41,9 +36,16 @@ module.exports = function(grunt) {
 
         require('svgpackager').pack(options, done);
     } else {
-        grunt.log.warn('Source folder not defined!');
+        if(options.source.length){
+            grunt.log.warn('Source folder not defined!');
+        }
+        if(options.dest.length){
+            grunt.log.warn('Destination folder not defined!');
+        }
+        if(options.package.length){
+            grunt.log.warn('Package name not defined!');
+        }
         return false;
     }
   });
-
 };
